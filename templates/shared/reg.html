@@ -1,0 +1,46 @@
+<div class="allover">
+    <div class="shadow-box">
+      <div class="shadow-box__title">Регистрация</div>
+
+      <form class="form form_register s-form validateble" method = "post" action = "{% url 'signup' %}">
+        {% csrf_token %}
+        
+        <fieldset class="form__fields">
+
+          <div class="form__field s-field">
+            <label for="email_field" class="form__field-label">E-mail</label>
+            <input type="email" value="" class="form__field-input" name="email" id="id_email" autocomplete="off" data-required="true" />
+          </div>
+
+          <div class="form__field s-field">
+            <label for="nickname_field" class="form__field-label">Никнейм</label>
+            <input type="text" value="" class="form__field-input" name="username" id="id_username" autocomplete="off" data-required="true" />
+          </div>
+
+          <div class="form__field s-field">
+            <label for="password_field" class="form__field-label">Пароль</label>
+            <input type="password" value="" class="form__field-input" name="password1" id="id_password" autocomplete="off" data-required="true" data-validate_password="password2" />
+          </div>
+
+          <div class="form__field s-field">
+            <label for="password_repeat" class="form__field-label">Пароль ещё раз</label>
+            <input type="password" value="" class="form__field-input" name="password2" id="id_password" autocomplete="off" data-required="true"  data-validate_password="password1" />
+          </div>
+
+
+
+
+          <div class="form__buttons s-buttons">
+            <button type="submit" name="go" id="registration_button" class="button button_wide button_primary" >Зарегистрироваться</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+</div>
+
+
+<style>
+
+</style>
+
+

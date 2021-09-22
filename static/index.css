@@ -1,0 +1,12 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+    @import "base.css";
+    @import "nav.css";
+    @import "lists.css";
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        min-height: 100%;
+    }

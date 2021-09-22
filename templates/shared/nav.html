@@ -1,0 +1,59 @@
+ {% load static %}
+
+<nav class="nav" id="dnav">
+
+ <div class="nav__container">
+  <ul class="nav__items list" >
+     <li class="nav__item" >
+         <a class="nav_link" href="/">
+         <div class="txt-box"> &nbsp; Welbex Test</div>
+         </a>
+     </li>
+       {% if request.user.is_authenticated %}
+     <li class="nav__item" title="Зайти в административную часть"> 
+        <a class="nav_link" href="{% url "admin:index" %}" >
+        <div class="txt-box">Зайти в админ </div></a>
+     </li> 
+
+    {% endif %}
+  </ul>
+  <ul class="nav__items list" >
+      {% if request.user.is_authenticated %}
+
+     <li class="nav__item">      
+        
+        <a class="nav_link" href="{% url 'password_change' %}">
+        <div class="txt-box">Изменить пароль</div></a> 
+         
+     </li> 
+     <li class="nav__item">    
+        <a class="nav_link" href="{% url 'logout' %}">Выйти</a>
+     </li> 
+       
+       <div class="nav__container right">
+        
+      <li class="nav__item">         
+        <a class="nav_link right" style="color: #fff" href ='/admin/'>
+        <div class="txt-box"> &nbsp;  {{ request.user.username }}
+       </div></a>
+       </li> 
+     </div>
+       
+        {% else %}
+        
+       <li class="nav__item"> 
+        <h4><a class="nav_link" href="{% url 'login' %}">Войти</a></h4>|
+        </li> 
+       <li class="nav__item"> 
+       <h4> <a class="nav_link" href="{% url 'signup' %}">Регистрация</a></h4>
+       </li> 
+         {% endif %}
+ 
+    </ul>
+  </div>
+
+
+</nav>
+</div>
+
+

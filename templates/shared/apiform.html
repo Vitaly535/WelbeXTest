@@ -1,0 +1,43 @@
+
+
+{% load static %}
+
+<div class="allovers">
+    <div class="shadow-box">
+      <div class="shadow-box__title" onclick=startTbl()>
+      {% if id %}Редактировать {% else %} Новая {% endif %} запись {{ model }}</div>
+      
+       <form data-modl="{{ model }}" data-id="{{ id }}" data-fld = '' action="javascript:;" id="{{ model }}"
+        onsubmit="sendform(this, this.dataset.modl, this.dataset.id, this.dataset.fld)">  
+
+
+
+{% for item in form %}
+
+<tbody class="body1">
+    <tr><th scope="col" class="th3">
+    <div class="text1">
+         {{ item.label  }}
+        </div>
+      </th>
+      <th scope="col" class="th2">
+        <div class="text1">
+
+        {{ item }}
+
+        </div>
+      </th>
+       </tr>
+
+  </tbody>
+
+{% endfor %}
+
+
+          <div class="form__buttons s-buttons">
+            <button type="submit" name="go" id="save_button" class="button button_wide button_primary" >Сохранить</button>
+          </div>
+      </form>
+      <button type="exit" name="exit" id="exit_button" class="button button_wide " >Выйти</button>
+    </div>
+</div>

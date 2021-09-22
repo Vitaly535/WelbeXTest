@@ -1,0 +1,44 @@
+{% load static %}
+
+<div class="top_container">
+
+   <div class="filter_group">
+
+        <span>ФИЛЬТРЫ</span>
+
+
+       <div class="dg_filter" id="filter1" > 
+         <select name="item1" id="param1" onchange="checkFilter(this, 'ranges')">
+         <option value="" selected>---------</option>
+         <option value="date">Дата</option>
+         <option value="name">Название</option>
+         <option value="quantity">Количество</option>
+         <option value="distance">Расстояние</option>
+         </select>
+     </div>
+
+         
+      <div class="dg_filter" id="filter2" style="display:none">
+         <select name="option1" id="param2">
+         <option value="" selected>Равно</option>
+         <option value="__lt">Меньше</option>
+         <option value="__gt">Больше</option>
+         <option value="__icontains">Содержит</option>
+        </select>
+      </div>
+
+       <div class="dg_filter" id="filter2" style="display:none">
+         <input name="value1" id="param3">
+        </input>
+      </div>
+
+        <div class="dg_filter" id="filter2" style="display:none">
+         <button name="value_select" onclick = "applyFilter('ranges')">
+          Применить
+        </button>
+      </div>
+
+   </div>
+</div>
+
+

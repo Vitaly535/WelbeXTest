@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Welbex Test{% endblock %}
+
+ {% block filterbox %}
+{% include 'filterbox.html' %}
+ {% endblock %}
+
+{% block content %}
+
+<div>
+{% csrf_token %}</div>
+{% include 'index_list.html' %}
+
+
+{% endblock %}
